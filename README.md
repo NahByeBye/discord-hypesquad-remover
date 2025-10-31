@@ -4,144 +4,147 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Active-success.svg)]()
 
-Un script Python simple et efficace pour retirer le badge HypeSquad de votre compte Discord.
+A simple and efficient Python script to remove the HypeSquad badge from your Discord account.
 
-## ⚠️ Avertissement Important
+## ⚠️ Important Warning
 
-**L'utilisation de self-bots viole les [Conditions d'Utilisation de Discord](https://discord.com/terms).** Ce projet est fourni **à des fins éducatives uniquement**. L'utilisation de ce script peut entraîner la suspension de votre compte Discord. Utilisez à vos propres risques.
+**Using self-bots violates [Discord's Terms of Service](https://discord.com/terms).** This project is provided **for educational purposes only**. Using this script may result in your Discord account being suspended. Use at your own risk.
 
-## ✨ Fonctionnalités
+## ✨ Features
 
-- ✅ Retrait rapide du badge HypeSquad
-- � Gestion sécurisée du token via fichier de configuration
-- 📝 Messages d'erreur clairs et informatifs
-- 🎯 Simple et facile à utiliser
+- ✅ Quick HypeSquad badge removal
+- 🔒 Secure token management via configuration file
+- 📝 Clear and informative error messages
+- 🎯 Simple and easy to use
 
-## 📋 Prérequis
+## 📋 Prerequisites
 
-- Python 3.7 ou supérieur
-- pip (gestionnaire de paquets Python)
-- Un compte Discord avec un badge HypeSquad
+- Python 3.7 or higher
+- pip (Python package manager)
+- A Discord account with a HypeSquad badge
 
 ## 🚀 Installation
 
-1. **Clonez le dépôt :**
+1. **Clone the repository:**
 ```bash
-git clone https://github.com/VOTRE_USERNAME/discord-hypesquad-remover.git
+git clone https://github.com/NahByeBye/discord-hypesquad-remover.git
 cd discord-hypesquad-remover
 ```
 
-2. **Installez les dépendances :**
+2. **Install dependencies:**
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **Configurez votre token :**
+3. **Configure your token:**
 ```bash
-# Copiez le fichier exemple
+# Copy the example file
 cp config.example.json config.json
 
-# Éditez config.json et ajoutez votre token
+# Edit config.json and add your token
 ```
 
 ## 🔧 Configuration
 
-1. Créez une copie de `config.example.json` nommée `config.json`
-2. Ouvrez `config.json` et remplacez `VOTRE_TOKEN_ICI` par votre token Discord
+1. Create a copy of `config.example.json` named `config.json`
+2. Open `config.json` and replace `YOUR_TOKEN_HERE` with your Discord token
 
-### Comment obtenir votre token Discord ?
+### How to get your Discord token?
 
-> ⚠️ **ATTENTION:** Ne partagez JAMAIS votre token avec qui que ce soit ! Votre token donne un accès complet à votre compte.
+> ⚠️ **WARNING:** NEVER share your token with anyone! Your token gives full access to your account.
 
-**Méthode 1 - Console du Navigateur (Recommandée) :**
+**Method 1 - Browser Console (Recommended):**
 
-1. Ouvrez Discord dans votre navigateur web (discord.com)
-2. Appuyez sur `F12` pour ouvrir les outils de développement
-3. Allez dans l'onglet `Console`
-4. Collez cette commande et appuyez sur Entrée :
+1. Open Discord in your web browser (discord.com)
+2. Press `F12` to open developer tools
+3. Go to the `Console` tab
+4. Paste this command and press Enter:
 ```javascript
 (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken()
 ```
-5. Copiez le token qui s'affiche (sans les guillemets)
-6. Collez-le dans votre fichier `config.json`
+5. Copy the token that appears (without quotes)
+6. Paste it into your `config.json` file
 
-**Méthode 2 - Application Discord :**
+**Method 2 - Discord Application:**
 
-1. Ouvrez Discord
-2. Appuyez sur `Ctrl + Shift + I` (Windows/Linux) ou `Cmd + Option + I` (Mac)
-3. Suivez les mêmes étapes que la méthode 1
+1. Open Discord
+2. Press `Ctrl + Shift + I` (Windows/Linux) or `Cmd + Option + I` (Mac)
+3. Follow the same steps as Method 1
 
-## � Utilisation
+## 💻 Usage
 
-Exécutez simplement le script :
+Simply run the script:
 ```bash
 python remove_hypesquad.py
 ```
 
-Le script affichera :
-- ✅ Un message de succès si le badge est retiré
-- ⚠️ Un avertissement si vous n'avez pas de badge HypeSquad
-- ❌ Une erreur si le token est invalide
+The script will display:
+- ✅ A success message if the badge is removed
+- ⚠️ A warning if you don't have a HypeSquad badge
+- ❌ An error if the token is invalid
 
-## 📸 Aperçu
+## 📸 Preview
 
 ```
 ==================================================
-  Self-Bot - Retrait Badge HypeSquad Discord
+  Self-Bot - Discord HypeSquad Badge Removal
 ==================================================
 
-🔄 Tentative de retrait du badge HypeSquad...
-✅ Badge HypeSquad retiré avec succès!
+🔄 Attempting to remove HypeSquad badge...
+✅ HypeSquad badge successfully removed!
 
 ==================================================
 ```
 
-## 🛠️ Dépannage
+## 🛠️ Troubleshooting
 
-### "Token invalide ou expiré"
-- Vérifiez que vous avez copié le token complet
-- Régénérez un nouveau token en changeant votre mot de passe Discord
+### "Invalid or expired token"
+- Make sure you copied the complete token
+- Generate a new token by changing your Discord password
 
-### "Vous n'avez pas de badge HypeSquad"
-- Vérifiez que vous avez bien un badge HypeSquad actif
-- Consultez vos paramètres Discord > HypeSquad
+### "You don't have a HypeSquad badge"
+- Check that you have an active HypeSquad badge
+- Check your Discord settings > HypeSquad
 
-### Erreurs d'importation
+### Import errors
 ```bash
 pip install --upgrade -r requirements.txt
 ```
 
-## 🔒 Sécurité
+## 🔒 Security
 
-- ⚠️ Ne commitez **JAMAIS** votre `config.json` avec votre vrai token
-- 🔐 Le fichier `config.json` est dans `.gitignore` par défaut
-- 🚨 Si votre token est compromis, changez **immédiatement** votre mot de passe Discord
-- 📝 Utilisez `config.example.json` comme template
+- ⚠️ NEVER commit your `config.json` with your real token
+- 🔐 The `config.json` file is in `.gitignore` by default
+- 🚨 If your token is compromised, change your Discord password **immediately**
+- 📝 Use `config.example.json` as a template
 
 ## 📝 Notes
 
-- Le script retire uniquement le badge HypeSquad Online
-- Vous pourrez le remettre à tout moment depuis les paramètres Discord
-- Aucune donnée n'est collectée ou envoyée ailleurs que vers l'API Discord officielle
+- The script only removes the HypeSquad Online badge
+- You can add it back anytime from Discord settings
+- No data is collected or sent anywhere other than the official Discord API
 
-## 🤝 Contribution
+## 🤝 Contributing
 
-Les contributions sont les bienvenues ! N'hésitez pas à :
-- 🐛 Signaler des bugs
-- 💡 Proposer de nouvelles fonctionnalités
-- 🔧 Soumettre des pull requests
+Contributions are welcome! Feel free to:
+- 🐛 Report bugs
+- 💡 Suggest new features
+- 🔧 Submit pull requests
 
-## 📄 Licence
+See [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
 
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## ⚖️ Disclaimer
 
-Ce projet est fourni "tel quel", sans garantie d'aucune sorte. Les auteurs ne sont pas responsables de toute suspension ou bannissement de compte Discord résultant de l'utilisation de ce script. Utilisez-le en connaissance de cause et à vos propres risques.
+This project is provided "as is", without warranty of any kind. The authors are not responsible for any Discord account suspension or ban resulting from the use of this script. Use it knowingly and at your own risk.
 
 ---
 
-**Développé avec ❤️ pour la communauté Discord**
+**Created by d_1114**
 
-⭐ Si ce projet vous a été utile, n'hésitez pas à lui donner une étoile !
+**Developed with ❤️ for the Discord community**
 
+⭐ If this project was useful to you, feel free to give it a star!

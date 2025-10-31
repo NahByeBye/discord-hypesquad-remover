@@ -1,13 +1,19 @@
+"""
+Discord HypeSquad Badge Remover
+Author: d_1114
+GitHub: https://github.com/NahByeBye/discord-hypesquad-remover
+"""
+
 import requests
 import json
 import os
 
 def load_config():
-    """Charge le token depuis le fichier config.json"""
+    """Load token from config.json file"""
     if not os.path.exists('config.json'):
-        print("❌ Fichier config.json introuvable!")
-        print("Créez un fichier config.json avec le contenu suivant:")
-        print('{\n  "token": "VOTRE_TOKEN_ICI"\n}')
+        print("❌ config.json file not found!")
+        print("Create a config.json file with the following content:")
+        print('{\n  "token": "YOUR_TOKEN_HERE"\n}')
         return None
     
     with open('config.json', 'r') as f:
@@ -15,7 +21,7 @@ def load_config():
         return config.get('token')
 
 def remove_hypesquad(token):
-    """Retire le badge HypeSquad du compte Discord"""
+    """Remove HypeSquad badge from Discord account"""
     url = "https://discord.com/api/v9/hypesquad/online"
     
     headers = {
@@ -23,32 +29,32 @@ def remove_hypesquad(token):
         "Content-Type": "application/json"
     }
     
-    print("🔄 Tentative de retrait du badge HypeSquad...")
+    print("🔄 Attempting to remove HypeSquad badge...")
     
     try:
         response = requests.delete(url, headers=headers)
         
         if response.status_code == 204:
-            print("✅ Badge HypeSquad retiré avec succès!")
+            print("✅ HypeSquad badge successfully removed!")
             return True
         elif response.status_code == 401:
-            print("❌ Token invalide ou expiré!")
+            print("❌ Invalid or expired token!")
             return False
         elif response.status_code == 404:
-            print("⚠️  Vous n'avez pas de badge HypeSquad à retirer.")
+            print("⚠️  You don't have a HypeSquad badge to remove.")
             return False
         else:
-            print(f"❌ Erreur: {response.status_code}")
-            print(f"Réponse: {response.text}")
+            print(f"❌ Error: {response.status_code}")
+            print(f"Response: {response.text}")
             return False
             
     except Exception as e:
-        print(f"❌ Erreur lors de la requête: {str(e)}")
+        print(f"❌ Request error: {str(e)}")
         return False
 
 def main():
     print("=" * 50)
-    print("  Self-Bot - Retrait Badge HypeSquad Discord")
+    print("  Self-Bot - Discord HypeSquad Badge Removal")
     print("=" * 50)
     print()
     
@@ -57,16 +63,16 @@ def main():
     if not token:
         return
     
-    # Vérification du token
+    # Token validation
     if not token.strip():
-        print("❌ Le token est vide dans config.json!")
+        print("❌ Token is empty in config.json!")
         return
     
     remove_hypesquad(token)
     
     print()
     print("=" * 50)
-    input("Appuyez sur Entrée pour quitter...")
+    input("Press Enter to exit...")
 
 if __name__ == "__main__":
     main()

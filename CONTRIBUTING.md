@@ -1,5 +1,7 @@
 # Contributing to Discord HypeSquad Remover
 
+**Project Creator: d_1114**
+
 First off, thanks for taking the time to contribute! 🎉
 
 ## How Can I Contribute?
