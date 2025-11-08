@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Active-success.svg)]()
 
-A simple and efficient Python script to remove the HypeSquad badge from your Discord account.
+A simple and efficient Python script to remove or add the HypeSquad badge from/to your Discord account.
 
 ## ⚠️ Important Warning
 
@@ -13,6 +13,7 @@ A simple and efficient Python script to remove the HypeSquad badge from your Dis
 ## ✨ Features
 
 - ✅ Quick HypeSquad badge removal
+- ➕ Easy HypeSquad badge addition (choose your house!)
 - 🔒 Secure token management via configuration file
 - 📝 Clear and informative error messages
 - 🎯 Simple and easy to use
@@ -73,18 +74,24 @@ cp config.example.json config.json
 
 ## 💻 Usage
 
-Simply run the script:
+**To remove HypeSquad badge:**
 ```bash
 python remove_hypesquad.py
 ```
 
-The script will display:
-- ✅ A success message if the badge is removed
-- ⚠️ A warning if you don't have a HypeSquad badge
+**To add HypeSquad badge:**
+```bash
+python add_hypesquad.py
+```
+
+The scripts will display:
+- ✅ A success message if the operation succeeds
+- ⚠️ A warning if you don't have/already have a HypeSquad badge
 - ❌ An error if the token is invalid
 
 ## 📸 Preview
 
+**Remove HypeSquad Badge:**
 ```
 ==================================================
   Self-Bot - Discord HypeSquad Badge Removal
@@ -92,6 +99,24 @@ The script will display:
 
 🔄 Attempting to remove HypeSquad badge...
 ✅ HypeSquad badge successfully removed!
+
+==================================================
+```
+
+**Add HypeSquad Badge:**
+```
+==================================================
+  Self-Bot - Discord HypeSquad Badge Adder
+==================================================
+
+Choose your HypeSquad house:
+1. 🔥 Bravery (Red)
+2. ⚡ Brilliance (Yellow)
+3. ⚖️  Balance (Green)
+
+Enter your choice (1-3): 1
+🔄 Attempting to join HypeSquad house 1...
+✅ Successfully joined HypeSquad Bravery!
 
 ==================================================
 ```
@@ -120,8 +145,9 @@ pip install --upgrade -r requirements.txt
 
 ## 📝 Notes
 
-- The script only removes the HypeSquad Online badge
-- You can add it back anytime from Discord settings
+- The scripts work with HypeSquad Online badges only
+- You can switch between houses anytime using the add script
+- You can remove and re-add the badge as many times as you want
 - No data is collected or sent anywhere other than the official Discord API
 
 ## 🤝 Contributing
