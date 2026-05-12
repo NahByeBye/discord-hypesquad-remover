@@ -11,7 +11,7 @@ import os
 def load_config():
     """Load token from config.json file"""
     if not os.path.exists('config.json'):
-        print("❌ config.json file not found!")
+        print("config.json file not found!")
         print("Create a config.json file with the following content:")
         print('{\n  "token": "YOUR_TOKEN_HERE"\n}')
         return None
@@ -29,27 +29,27 @@ def remove_hypesquad(token):
         "Content-Type": "application/json"
     }
     
-    print("🔄 Attempting to remove HypeSquad badge...")
+    print("Attempting to remove HypeSquad badge...")
     
     try:
         response = requests.delete(url, headers=headers)
         
         if response.status_code == 204:
-            print("✅ HypeSquad badge successfully removed!")
+            print("HypeSquad badge successfully removed!")
             return True
         elif response.status_code == 401:
-            print("❌ Invalid or expired token!")
+            print("Invalid or expired token!")
             return False
         elif response.status_code == 404:
-            print("⚠️  You don't have a HypeSquad badge to remove.")
+            print("You don't have a HypeSquad badge to remove.")
             return False
         else:
-            print(f"❌ Error: {response.status_code}")
+            print(f"Error: {response.status_code}")
             print(f"Response: {response.text}")
             return False
             
     except Exception as e:
-        print(f"❌ Request error: {str(e)}")
+        print(f"Request error: {str(e)}")
         return False
 
 def main():
@@ -65,7 +65,7 @@ def main():
     
     # Token validation
     if not token.strip():
-        print("❌ Token is empty in config.json!")
+        print("Token is empty in config.json!")
         return
     
     remove_hypesquad(token)
