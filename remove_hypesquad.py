@@ -7,14 +7,28 @@ GitHub: https://github.com/NahByeBye/discord-hypesquad-remover
 import requests
 import json
 import os
+import sys
+
+def create_config_file():
+    """Create config.json file with template and exit"""
+    config_template = {
+        "token": "input_your_token_here"
+    }
+    
+    with open('config.json', 'w') as f:
+        json.dump(config_template, f, indent=4)
+    
+    print("config.json file not found!")
+    print("Created config.json file with template.")
+    print("Please edit config.json and add your token, then run the program again.")
+    print("\nPress Enter to exit...")
+    input()
+    sys.exit(0)
 
 def load_config():
     """Load token from config.json file"""
     if not os.path.exists('config.json'):
-        print("❌ config.json file not found!")
-        print("Create a config.json file with the following content:")
-        print('{\n  "token": "YOUR_TOKEN_HERE"\n}')
-        return None
+        create_config_file()
     
     with open('config.json', 'r') as f:
         config = json.load(f)
@@ -61,9 +75,18 @@ def main():
     token = load_config()
     
     if not token:
+        print("❌ No token found in config.json!")
+        print("Please edit config.json and add your token.")
+        print("\nPress Enter to exit...")
+        input()
         return
-    
-    # Token validation
+
+    if token == "input_your_token_here":
+        print("❌ Please edit config.json and replace 'input_your_token_here' with your actual token!")
+        print("\nPress Enter to exit...")
+        input()
+        return
+
     if not token.strip():
         print("❌ Token is empty in config.json!")
         return

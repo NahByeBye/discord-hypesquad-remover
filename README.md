@@ -97,8 +97,8 @@ The scripts will display:
   Self-Bot - Discord HypeSquad Badge Removal
 ==================================================
 
-🔄 Attempting to remove HypeSquad badge...
-✅ HypeSquad badge successfully removed!
+Attempting to remove HypeSquad badge...
+HypeSquad badge successfully removed!
 
 ==================================================
 ```
@@ -110,13 +110,13 @@ The scripts will display:
 ==================================================
 
 Choose your HypeSquad house:
-1. 🔥 Bravery (Red)
-2. ⚡ Brilliance (Yellow)
-3. ⚖️  Balance (Green)
+1. Bravery (Purple)
+2. Brilliance (Orange)
+3. Balance (Green)
 
 Enter your choice (1-3): 1
-🔄 Attempting to join HypeSquad house 1...
-✅ Successfully joined HypeSquad Bravery!
+Attempting to join HypeSquad house 1...
+Successfully joined HypeSquad Bravery!
 
 ==================================================
 ```
